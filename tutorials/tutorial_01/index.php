@@ -39,5 +39,5 @@
     }
     ?>
   </table>
-</body>A
+</body>
 </html>
