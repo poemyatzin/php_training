@@ -23,7 +23,7 @@
   if (!file_exists($output_dir . $folder_name)) {
     @mkdir($output_dir . $folder_name, 0777);
   }
-  if ($type === "image/jpeg" or $type === "image/png") {
+  if ($type === "image/jpeg" or $type === "image/png" or $type === "image/jpg") {
     move_uploaded_file($tmp, "$folder_name/$photo_name");
   }
   ?>
