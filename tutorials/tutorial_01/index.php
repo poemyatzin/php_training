@@ -5,22 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tutorial_01_chessboard</title>
-  <style>
-    table {
-      width: 400px;
-      height: 400px;
-      border: 1px solid black;
-    }
-
-    .even {
-      background-color: white;
-      color: black;
-    }
-
-    .odd {
-      background-color: black;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
