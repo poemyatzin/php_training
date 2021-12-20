@@ -1,0 +1,14 @@
+table {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+.even {
+  background-color: white;
+  color: black;
+}
+
+.odd {
+  background-color: black;
+}
