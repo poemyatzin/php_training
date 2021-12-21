@@ -8,7 +8,7 @@
 
 <body>
   <div class="frm">
-    <form action="" method="post" method="post">
+    <form action="index.php" method="post">
       <h1>QR Tutorial</h1>
       <label>Enter QR Text</label> <input type="text" name="qrtext">
       <button type="submit" name="btnsave">save</button>
