@@ -17,6 +17,7 @@
         <th>Student DOB</th>
         <th>Student Phone</th>
         <th>Student Address</th>
+        <th>Student Mark</th>
       </tr>
 
       <?php
@@ -33,6 +34,7 @@
           <td><?php echo $data["student_dob"]; ?></td>
           <td><?php echo $data["student_phone"]; ?></td>
           <td><?php echo $data["student_address"]; ?></td>
+          <td><?php echo $data["student_mark"]; ?></td>
           <td><a href="updatedata.php?student_id=<?php echo $data['student_id']; ?>">
               <button>Edit</button></a></td>
           <td><a href="deletedata.php?student_id=<?php echo $data['student_id']; ?>">
