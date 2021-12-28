@@ -19,7 +19,7 @@
         <td>
           <label>Email</label>
         </td>
-        <td><input type="email" name="txtemail" value="<?php echo $_SESSION['uu']?>"></td>
+        <td><input type="email" name="txtemail" value="<?php echo $_SESSION['email']?>"></td>
       </tr>
       <tr>
         <td></td>

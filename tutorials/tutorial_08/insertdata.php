@@ -19,7 +19,7 @@
           <td><input type="text" name="txtname"></td>
         </tr>
         <tr>
-          <td>Student Date of Birth</td>
+          <td>Student Age</td>
           <td><input type="text" name="txtdob"></td>
         </tr>
         <tr>
@@ -29,6 +29,10 @@
         <tr>
           <td>Student Address</td>
           <td><input type="text" name="txtaddress"></td>
+        </tr>
+        <tr>
+          <td>Student Mark</td>
+          <td><input type="text" name="txtmark"></td>
         </tr>
         <tr>
           <td></td>
@@ -43,10 +47,11 @@
   $stu_dob = $_POST['txtdob'];
   $stu_phone = $_POST['txtphone'];
   $stu_address = $_POST['txtaddress'];
+  $stu_mark = $_POST['txtmark'];
 
   if (isset($_POST['btnsubmit'])) {
-    $sql = "INSERT INTO tbl_student(student_name, student_dob,student_phone,student_address)   
-  VALUES ('$stu_name','$stu_dob','$stu_phone','$stu_address');";
+    $sql = "INSERT INTO tbl_student(student_name, student_dob,student_phone,student_address,student_mark)   
+  VALUES ('$stu_name','$stu_dob','$stu_phone','$stu_address','$stu_mark');";
 
     if ($conn->query($sql) === TRUE) {
       echo "<script>location.href='alldata.php'</script>";

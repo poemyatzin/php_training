@@ -42,6 +42,10 @@ $data = mysqli_fetch_array($records);
           <td><input type="text" name="txtaddress" value="<?php echo $data['student_address'] ?>"></td>
         </tr>
         <tr>
+          <td>Student Mark</td>
+          <td><input type="text" name="txtmark" value="<?php echo $data['student_mark'] ?>"></td>
+        </tr>
+        <tr>
           <td></td>
           <td><input type="submit" name="btnupdate" value="Update"></td>
         </tr>
@@ -55,12 +59,14 @@ $data = mysqli_fetch_array($records);
   $stu_dob = $_POST['txtdob'];
   $stu_phone = $_POST['txtphone'];
   $stu_address = $_POST['txtaddress'];
+  $stu_mark = $_POST['txtmark'];
 
   if (isset($_POST['btnupdate'])) {
     $sql = "UPDATE tbl_student SET 
   student_name='$stu_name',student_dob='$stu_dob',
   student_phone='$stu_phone',
-  student_address='$stu_address'
+  student_address='$stu_address',
+  student_mark='$stu_mark'
   WHERE student_id=$stu_id";
 
     if ($conn->query($sql) === TRUE) {
