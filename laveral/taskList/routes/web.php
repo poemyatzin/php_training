@@ -9,4 +9,4 @@ Route::get('/', function () {
 Route::get('/', function () {
     return redirect()->route('test.index');
 });
-Route::resource('test', TaskController::class);
+Route::resource('test',TaskController::class);
