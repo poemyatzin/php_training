@@ -5,7 +5,10 @@ namespace App\Dao;
 use App\Contracts\Dao\StudentDaoInterface;
 use Illuminate\Http\Request;
 use App\Models\Student;
-use Illuminate\Support\Facades\Validator;
+use App\Exports\StudentExport;
+use App\Imports\StudentImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 
 class StudentDao implements StudentDaoInterface
@@ -49,6 +52,12 @@ class StudentDao implements StudentDaoInterface
        
         $student->delete();
         return $student;
+    }
+    public function getimportexcel(Request $request)
+    {
+       $data=$request->file('file');
+
+        return $data;
     }
    
 }

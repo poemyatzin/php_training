@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Major;
 use App\Contracts\Service\StudentServiceInterface;
+use App\Exports\StudentExport;
+use App\Imports\StudentImport;
 use Illuminate\Support\Facades\Validator;
-
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -84,5 +86,23 @@ class StudentController extends Controller
         }
     }
 
+    public function exportexcel()
+    {
+        
+        return Excel::download(new StudentExport,'studentdata.xlsx');
+    
+    }
+    public function importexcel(Request $request)
+    {
+     
 
+        $data=$this->studentInterface->getimportexcel($request);
+         $studentfile =$data->getClientOriginalName();
+
+        $data->move('StudentData',$studentfile);
+        
+        Excel::import(new StudentImport,\public_path('/StudentData/'.$studentfile));
+        return \redirect()->back();
+
+    }
 }

@@ -37,5 +37,9 @@ class StudentService implements StudentServiceInterface
     public function deleteStudent($id){
         return $this->studentDao->deleteStudent($id);
     }
+    public function getimportexcel(Request $request)
+    {
+        return $this->studentDao->getimportexcel($request);
+    }
     
   }

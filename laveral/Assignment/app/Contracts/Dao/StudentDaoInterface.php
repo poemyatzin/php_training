@@ -11,5 +11,6 @@ interface StudentDaoInterface
     public function editStudent($id);
     public function updateStudent(Request $request,$id);
     public function deleteStudent($id);
+    public function getimportexcel(Request $request);
   
 }

@@ -21,5 +21,5 @@ Route::post('addstudent', [StudentController::class,'store']);
 Route::get('editstudent/{id}', [StudentController::class,'edit']);
 Route::put('updatestudent/{id}', [StudentController::class,'update']);
 Route::delete('deletestudent/{id}', [StudentController::class, 'delete']);
-
-
+Route::get('exportexcel', [StudentController::class,'exportexcel']);
+Route::post('importexcel', [StudentController::class,'importexcel']);
