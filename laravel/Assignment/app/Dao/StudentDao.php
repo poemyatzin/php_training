@@ -8,8 +8,7 @@ use App\Models\Student;
 use App\Exports\StudentExport;
 use App\Imports\StudentImport;
 use Maatwebsite\Excel\Facades\Excel;
-
-
+use Illuminate\Support\Facades\DB;
 
 class StudentDao implements StudentDaoInterface
 {
@@ -59,5 +58,18 @@ class StudentDao implements StudentDaoInterface
 
         return $data;
     }
-   
+    public function search(Request $request)
+    {
+        $s_date=$request->input('startdate');
+        $end_date=$request->input('enddate');
+        $n=$request->input('searchname');
+       $student=DB::table('students')
+       ->join('majors','majors.id','=','students.majorid')
+       ->select('students.id','students.name','students.dob','students.phone','students.address','majors.major')
+       ->where('students.name','LIKE','%'.$n.'%')
+       ->where('students.created_at','>=',$s_date)
+       ->where('students.updated_at','<=',$end_date)
+       ->get();
+       return $student;
+    }
 }

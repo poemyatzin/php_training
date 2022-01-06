@@ -41,5 +41,8 @@ class StudentService implements StudentServiceInterface
     {
         return $this->studentDao->getimportexcel($request);
     }
-    
+    public function search(Request $request)
+    {
+        return $this->studentDao->search($request);
+    }
   }

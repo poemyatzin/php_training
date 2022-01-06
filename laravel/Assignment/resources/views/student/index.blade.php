@@ -44,8 +44,23 @@
   </form>
   </div>
 </div>
-
         </div>
+        <div class="card-header">
+        <form action="{{ url('searchStudent')}}" method="POST" enctype="multipart/form-data">
+        @csrf
+           <label for="">Search Name</label>
+              <input type="text" name="searchname" class="col-auto">
+              <label for="">Start Date</label>
+              <input type="date" name="startdate" class="col-auto">
+              <label for="">End Date</label>
+              <input type="date" name="enddate" class="col-auto">
+             <button type="submit" class="btn btn-primary float-end">Search</button>
+        </form>
+        </div>
+        <div class="form-group mb-3">
+             
+            </div>
+
         <div class="card-body">
 
           <table class="table table-bordered table-striped">
@@ -69,7 +84,7 @@
                 <td>{{ $item->dob }}</td>
                 <td>{{ $item->phone }}</td>
                 <td>{{ $item->address }}</td>
-                <td>{{ $item->Major->major}}</td>
+                <td>{{ $item->major}}</td>
                 <td>
                   <a href="{{ url('editstudent/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                 </td>

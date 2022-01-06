@@ -9,6 +9,7 @@ use App\Exports\StudentExport;
 use App\Imports\StudentImport;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
+use DB;
 
 class StudentController extends Controller
 {
@@ -94,8 +95,6 @@ class StudentController extends Controller
     }
     public function importexcel(Request $request)
     {
-     
-
         $data=$this->studentInterface->getimportexcel($request);
          $studentfile =$data->getClientOriginalName();
 
@@ -104,5 +103,12 @@ class StudentController extends Controller
         Excel::import(new StudentImport,\public_path('/StudentData/'.$studentfile));
         return \redirect()->back();
 
+    }
+    public function searchStudent(Request $request)
+    {
+      $student=$this->studentInterface->search($request);
+        if ($student) {
+           return view('student.index',compact('student'));
+        }
     }
 }
